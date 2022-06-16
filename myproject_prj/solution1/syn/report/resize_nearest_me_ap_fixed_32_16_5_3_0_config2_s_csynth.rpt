@@ -1,0 +1,164 @@
+
+
+================================================================
+== Vivado HLS Report for 'resize_nearest_me_ap_fixed_32_16_5_3_0_config2_s'
+================================================================
+* Date:           Wed Jun 15 23:30:43 2022
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 4.375 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-------+-------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+    |   min   |   max   |    min    |    max    |  min  |  max  |   Type  |
+    +---------+---------+-----------+-----------+-------+-------+---------+
+    |    12322|    12322| 61.610 us | 61.610 us |  12322|  12322|   none  |
+    +---------+---------+-----------+-----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |               |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- ResizeImage  |    12320|    12320|        21|         20|          5|   616|    yes   |
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     41|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|    205|    -|
+|Register         |        -|      -|     175|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|     175|    246|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name           | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |i_fu_77_p2                         |     +    |      0|  0|  14|          10|           1|
+    |ap_block_pp0_stage0_01001          |    and   |      0|  0|   2|           1|           1|
+    |ap_block_pp0_stage10_01001         |    and   |      0|  0|   2|           1|           1|
+    |ap_block_pp0_stage1_01001          |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state10_pp0_stage8_iter0  |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln20_fu_71_p2                 |   icmp   |      0|  0|  13|          10|          10|
+    |ap_block_state1                    |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state3_pp0_stage1_iter0   |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                      |    xor   |      0|  0|   2|           1|           2|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                              |          |      0|  0|  41|          27|          19|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+-----+-----------+-----+-----------+
+    |             Name            | LUT | Input Size| Bits| Total Bits|
+    +-----------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                    |  109|         23|    1|         23|
+    |ap_done                      |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1      |    9|          2|    1|          2|
+    |ap_phi_mux_i_0_phi_fu_64_p4  |    9|          2|   10|         20|
+    |i_0_reg_60                   |    9|          2|   10|         20|
+    |image_V_V_blk_n              |    9|          2|    1|          2|
+    |real_start                   |    9|          2|    1|          2|
+    |resized_V_V_blk_n            |    9|          2|    1|          2|
+    |resized_V_V_din              |   33|          6|   32|        192|
+    +-----------------------------+-----+-----------+-----+-----------+
+    |Total                        |  205|         43|   58|        265|
+    +-----------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |  22|   0|   22|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |i_0_reg_60               |  10|   0|   10|          0|
+    |i_reg_87                 |  10|   0|   10|          0|
+    |icmp_ln20_reg_83         |   1|   0|    1|          0|
+    |start_once_reg           |   1|   0|    1|          0|
+    |tmp_V_60_reg_92          |  32|   0|   32|          0|
+    |tmp_V_61_reg_97          |  32|   0|   32|          0|
+    |tmp_V_62_reg_102         |  32|   0|   32|          0|
+    |tmp_V_reg_107            |  32|   0|   32|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    | 175|   0|  175|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+-------------------------------------------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |                     Source Object                     |    C Type    |
++--------------------+-----+-----+------------+-------------------------------------------------------+--------------+
+|ap_clk              |  in |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|ap_rst              |  in |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|ap_start            |  in |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|start_full_n        |  in |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|ap_done             | out |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|ap_continue         |  in |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|ap_idle             | out |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|ap_ready            | out |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|start_out           | out |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|start_write         | out |    1| ap_ctrl_hs | resize_nearest_me<ap_fixed<32, 16, 5, 3, 0>, config2> | return value |
+|image_V_V_dout      |  in |   32|   ap_fifo  |                       image_V_V                       |    pointer   |
+|image_V_V_empty_n   |  in |    1|   ap_fifo  |                       image_V_V                       |    pointer   |
+|image_V_V_read      | out |    1|   ap_fifo  |                       image_V_V                       |    pointer   |
+|resized_V_V_din     | out |   32|   ap_fifo  |                      resized_V_V                      |    pointer   |
+|resized_V_V_full_n  |  in |    1|   ap_fifo  |                      resized_V_V                      |    pointer   |
+|resized_V_V_write   | out |    1|   ap_fifo  |                      resized_V_V                      |    pointer   |
++--------------------+-----+-----+------------+-------------------------------------------------------+--------------+
+

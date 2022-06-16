@@ -1,0 +1,482 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense_large_stream_me_ap_fixed_ap_fixed_config54_s'
+================================================================
+* Date:           Wed Jun 15 23:30:36 2022
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 2.188 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       31|       31| 0.155 us | 0.155 us |   31|   31|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 32
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.18>
+ST_1 : Operation 33 [1/1] (2.18ns)   --->   "%empty = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 33 'read' 'empty' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_1 : Operation 34 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 0)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 34 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 2 <SV = 1> <Delay = 2.18>
+ST_2 : Operation 35 [1/1] (2.18ns)   --->   "%empty_194 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 35 'read' 'empty_194' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 3 <SV = 2> <Delay = 2.18>
+ST_3 : Operation 36 [1/1] (2.18ns)   --->   "%empty_195 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 36 'read' 'empty_195' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 4 <SV = 3> <Delay = 2.18>
+ST_4 : Operation 37 [1/1] (2.18ns)   --->   "%empty_196 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 37 'read' 'empty_196' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 5 <SV = 4> <Delay = 2.18>
+ST_5 : Operation 38 [1/1] (2.18ns)   --->   "%empty_197 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 38 'read' 'empty_197' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 6 <SV = 5> <Delay = 2.18>
+ST_6 : Operation 39 [1/1] (2.18ns)   --->   "%empty_198 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 39 'read' 'empty_198' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 7 <SV = 6> <Delay = 2.18>
+ST_7 : Operation 40 [1/1] (2.18ns)   --->   "%empty_199 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 40 'read' 'empty_199' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 8 <SV = 7> <Delay = 2.18>
+ST_8 : Operation 41 [1/1] (2.18ns)   --->   "%empty_200 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 41 'read' 'empty_200' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 9 <SV = 8> <Delay = 2.18>
+ST_9 : Operation 42 [1/1] (2.18ns)   --->   "%empty_201 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 42 'read' 'empty_201' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 10 <SV = 9> <Delay = 2.18>
+ST_10 : Operation 43 [1/1] (2.18ns)   --->   "%empty_202 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 43 'read' 'empty_202' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 11 <SV = 10> <Delay = 2.18>
+ST_11 : Operation 44 [1/1] (2.18ns)   --->   "%empty_203 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 44 'read' 'empty_203' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 12 <SV = 11> <Delay = 2.18>
+ST_12 : Operation 45 [1/1] (2.18ns)   --->   "%empty_204 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 45 'read' 'empty_204' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 13 <SV = 12> <Delay = 2.18>
+ST_13 : Operation 46 [1/1] (2.18ns)   --->   "%empty_205 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 46 'read' 'empty_205' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 14 <SV = 13> <Delay = 2.18>
+ST_14 : Operation 47 [1/1] (2.18ns)   --->   "%empty_206 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 47 'read' 'empty_206' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 15 <SV = 14> <Delay = 2.18>
+ST_15 : Operation 48 [1/1] (2.18ns)   --->   "%empty_207 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 48 'read' 'empty_207' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 16 <SV = 15> <Delay = 2.18>
+ST_16 : Operation 49 [1/1] (2.18ns)   --->   "%empty_208 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 49 'read' 'empty_208' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 17 <SV = 16> <Delay = 2.18>
+ST_17 : Operation 50 [1/1] (2.18ns)   --->   "%empty_209 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 50 'read' 'empty_209' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 18 <SV = 17> <Delay = 2.18>
+ST_18 : Operation 51 [1/1] (2.18ns)   --->   "%empty_210 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 51 'read' 'empty_210' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 19 <SV = 18> <Delay = 2.18>
+ST_19 : Operation 52 [1/1] (2.18ns)   --->   "%empty_211 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 52 'read' 'empty_211' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 20 <SV = 19> <Delay = 2.18>
+ST_20 : Operation 53 [1/1] (2.18ns)   --->   "%empty_212 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 53 'read' 'empty_212' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 21 <SV = 20> <Delay = 2.18>
+ST_21 : Operation 54 [1/1] (2.18ns)   --->   "%empty_213 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 54 'read' 'empty_213' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 22 <SV = 21> <Delay = 2.18>
+ST_22 : Operation 55 [1/1] (2.18ns)   --->   "%empty_214 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 55 'read' 'empty_214' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 23 <SV = 22> <Delay = 2.18>
+ST_23 : Operation 56 [1/1] (2.18ns)   --->   "%empty_215 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 56 'read' 'empty_215' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 24 <SV = 23> <Delay = 2.18>
+ST_24 : Operation 57 [1/1] (2.18ns)   --->   "%empty_216 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 57 'read' 'empty_216' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 25 <SV = 24> <Delay = 2.18>
+ST_25 : Operation 58 [1/1] (2.18ns)   --->   "%empty_217 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 58 'read' 'empty_217' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 26 <SV = 25> <Delay = 2.18>
+ST_26 : Operation 59 [1/1] (2.18ns)   --->   "%empty_218 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 59 'read' 'empty_218' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 27 <SV = 26> <Delay = 2.18>
+ST_27 : Operation 60 [1/1] (2.18ns)   --->   "%empty_219 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 60 'read' 'empty_219' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 28 <SV = 27> <Delay = 2.18>
+ST_28 : Operation 61 [1/1] (2.18ns)   --->   "%empty_220 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 61 'read' 'empty_220' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 29 <SV = 28> <Delay = 2.18>
+ST_29 : Operation 62 [1/1] (2.18ns)   --->   "%empty_221 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 62 'read' 'empty_221' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 30 <SV = 29> <Delay = 2.18>
+ST_30 : Operation 63 [1/1] (2.18ns)   --->   "%empty_222 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 63 'read' 'empty_222' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 31 <SV = 30> <Delay = 2.18>
+ST_31 : Operation 64 [1/1] (2.18ns)   --->   "%empty_223 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 64 'read' 'empty_223' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 32 <SV = 31> <Delay = 2.18>
+ST_32 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %res_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 65 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 66 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %data_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 66 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 67 [1/1] (2.18ns)   --->   "%empty_224 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 67 'read' 'empty_224' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_32 : Operation 68 [1/1] (0.00ns)   --->   "ret void" [firmware/nnet_utils/nnet_dense_resource.h:585]   --->   Operation 68 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ data_V_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ res_V_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+empty             (read         ) [ 000000000000000000000000000000000]
+write_ln582       (write        ) [ 000000000000000000000000000000000]
+empty_194         (read         ) [ 000000000000000000000000000000000]
+empty_195         (read         ) [ 000000000000000000000000000000000]
+empty_196         (read         ) [ 000000000000000000000000000000000]
+empty_197         (read         ) [ 000000000000000000000000000000000]
+empty_198         (read         ) [ 000000000000000000000000000000000]
+empty_199         (read         ) [ 000000000000000000000000000000000]
+empty_200         (read         ) [ 000000000000000000000000000000000]
+empty_201         (read         ) [ 000000000000000000000000000000000]
+empty_202         (read         ) [ 000000000000000000000000000000000]
+empty_203         (read         ) [ 000000000000000000000000000000000]
+empty_204         (read         ) [ 000000000000000000000000000000000]
+empty_205         (read         ) [ 000000000000000000000000000000000]
+empty_206         (read         ) [ 000000000000000000000000000000000]
+empty_207         (read         ) [ 000000000000000000000000000000000]
+empty_208         (read         ) [ 000000000000000000000000000000000]
+empty_209         (read         ) [ 000000000000000000000000000000000]
+empty_210         (read         ) [ 000000000000000000000000000000000]
+empty_211         (read         ) [ 000000000000000000000000000000000]
+empty_212         (read         ) [ 000000000000000000000000000000000]
+empty_213         (read         ) [ 000000000000000000000000000000000]
+empty_214         (read         ) [ 000000000000000000000000000000000]
+empty_215         (read         ) [ 000000000000000000000000000000000]
+empty_216         (read         ) [ 000000000000000000000000000000000]
+empty_217         (read         ) [ 000000000000000000000000000000000]
+empty_218         (read         ) [ 000000000000000000000000000000000]
+empty_219         (read         ) [ 000000000000000000000000000000000]
+empty_220         (read         ) [ 000000000000000000000000000000000]
+empty_221         (read         ) [ 000000000000000000000000000000000]
+empty_222         (read         ) [ 000000000000000000000000000000000]
+empty_223         (read         ) [ 000000000000000000000000000000000]
+specinterface_ln0 (specinterface) [ 000000000000000000000000000000000]
+specinterface_ln0 (specinterface) [ 000000000000000000000000000000000]
+empty_224         (read         ) [ 000000000000000000000000000000000]
+ret_ln585         (ret          ) [ 000000000000000000000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="data_V_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="data_V_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="res_V_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="res_V_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1001" name="const_4">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.volatile.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_fifo.volatile.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1004" name="grp_read_fu_20">
+<pin_list>
+<pin id="21" dir="0" index="0" bw="32" slack="0"/>
+<pin id="22" dir="0" index="1" bw="32" slack="0"/>
+<pin id="23" dir="1" index="2" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="empty/1 empty_194/2 empty_195/3 empty_196/4 empty_197/5 empty_198/6 empty_199/7 empty_200/8 empty_201/9 empty_202/10 empty_203/11 empty_204/12 empty_205/13 empty_206/14 empty_207/15 empty_208/16 empty_209/17 empty_210/18 empty_211/19 empty_212/20 empty_213/21 empty_214/22 empty_215/23 empty_216/24 empty_217/25 empty_218/26 empty_219/27 empty_220/28 empty_221/29 empty_222/30 empty_223/31 empty_224/32 "/>
+</bind>
+</comp>
+
+<comp id="26" class="1004" name="write_ln582_write_fu_26">
+<pin_list>
+<pin id="27" dir="0" index="0" bw="0" slack="0"/>
+<pin id="28" dir="0" index="1" bw="32" slack="0"/>
+<pin id="29" dir="0" index="2" bw="1" slack="0"/>
+<pin id="30" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln582/1 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="24"><net_src comp="4" pin="0"/><net_sink comp="20" pin=0"/></net>
+
+<net id="25"><net_src comp="0" pin="0"/><net_sink comp="20" pin=1"/></net>
+
+<net id="31"><net_src comp="6" pin="0"/><net_sink comp="26" pin=0"/></net>
+
+<net id="32"><net_src comp="2" pin="0"/><net_sink comp="26" pin=1"/></net>
+
+<net id="33"><net_src comp="8" pin="0"/><net_sink comp="26" pin=2"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: res_V_V | {1 }
+ - Input state : 
+	Port: dense_large_stream_me<ap_fixed,ap_fixed,config54> : data_V_V | {1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 }
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-------------------------|
+| Operation|     Functional Unit     |
+|----------|-------------------------|
+|   read   |      grp_read_fu_20     |
+|----------|-------------------------|
+|   write  | write_ln582_write_fu_26 |
+|----------|-------------------------|
+|   Total  |                         |
+|----------|-------------------------|
+
+Memories:
+N/A
+
+* Register list:
+N/A
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+
+|           |
++-----------+
+|  Function |
+|   Memory  |
+|Multiplexer|
+|  Register |
++-----------+
+|   Total   |
++-----------+

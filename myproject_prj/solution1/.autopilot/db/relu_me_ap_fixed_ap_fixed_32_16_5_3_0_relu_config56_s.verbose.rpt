@@ -1,0 +1,612 @@
+
+
+================================================================
+== Vivado HLS Report for 'relu_me_ap_fixed_ap_fixed_32_16_5_3_0_relu_config56_s'
+================================================================
+* Date:           Wed Jun 15 23:31:05 2022
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 3.206 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+    |   min   |   max   |    min    |    max    | min | max |   Type   |
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |        2|        2| 10.000 ns | 10.000 ns |    1|    1| function |
+    +---------+---------+-----------+-----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     55|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|     27|    -|
+|Register         |        -|      -|      98|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|      98|     82|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |icmp_ln1494_fu_53_p2              |   icmp   |      0|  0|  18|          32|           1|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |out_data_V_fu_58_p3               |  select  |      0|  0|  31|           1|          31|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  55|          36|          36|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------+----+-----------+-----+-----------+
+    |      Name      | LUT| Input Size| Bits| Total Bits|
+    +----------------+----+-----------+-----+-----------+
+    |ap_done         |   9|          2|    1|          2|
+    |data_V_V_blk_n  |   9|          2|    1|          2|
+    |res_V_V_blk_n   |   9|          2|    1|          2|
+    +----------------+----+-----------+-----+-----------+
+    |Total           |  27|          6|    3|          6|
+    +----------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2  |   1|   0|    1|          0|
+    |out_data_V_reg_79        |  31|   0|   31|          0|
+    |tmp_V_reg_69             |  32|   0|   32|          0|
+    |trunc_ln1494_reg_74      |  31|   0|   31|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  98|   0|   98|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+-------------------------------------------------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  |                     Source Object                     |    C Type    |
++------------------+-----+-----+------------+-------------------------------------------------------+--------------+
+|ap_clk            |  in |    1| ap_ctrl_hs | relu_me<ap_fixed,ap_fixed<32,16,5,3,0>,relu_config56> | return value |
+|ap_rst            |  in |    1| ap_ctrl_hs | relu_me<ap_fixed,ap_fixed<32,16,5,3,0>,relu_config56> | return value |
+|ap_start          |  in |    1| ap_ctrl_hs | relu_me<ap_fixed,ap_fixed<32,16,5,3,0>,relu_config56> | return value |
+|ap_done           | out |    1| ap_ctrl_hs | relu_me<ap_fixed,ap_fixed<32,16,5,3,0>,relu_config56> | return value |
+|ap_continue       |  in |    1| ap_ctrl_hs | relu_me<ap_fixed,ap_fixed<32,16,5,3,0>,relu_config56> | return value |
+|ap_idle           | out |    1| ap_ctrl_hs | relu_me<ap_fixed,ap_fixed<32,16,5,3,0>,relu_config56> | return value |
+|ap_ready          | out |    1| ap_ctrl_hs | relu_me<ap_fixed,ap_fixed<32,16,5,3,0>,relu_config56> | return value |
+|data_V_V_dout     |  in |   32|   ap_fifo  |                        data_V_V                       |    pointer   |
+|data_V_V_empty_n  |  in |    1|   ap_fifo  |                        data_V_V                       |    pointer   |
+|data_V_V_read     | out |    1|   ap_fifo  |                        data_V_V                       |    pointer   |
+|res_V_V_din       | out |   32|   ap_fifo  |                        res_V_V                        |    pointer   |
+|res_V_V_full_n    |  in |    1|   ap_fifo  |                        res_V_V                        |    pointer   |
+|res_V_V_write     | out |    1|   ap_fifo  |                        res_V_V                        |    pointer   |
++------------------+-----+-----+------------+-------------------------------------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.18>
+ST_1 : Operation 4 [1/1] (2.18ns)   --->   "%tmp_V = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_activation_stream.h:63]   --->   Operation 4 'read' 'tmp_V' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%trunc_ln1494 = trunc i32 %tmp_V to i31" [firmware/nnet_utils/nnet_activation_stream.h:67]   --->   Operation 5 'trunc' 'trunc_ln1494' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 3.20>
+ST_2 : Operation 6 [1/1] (2.47ns)   --->   "%icmp_ln1494 = icmp sgt i32 %tmp_V, 0" [firmware/nnet_utils/nnet_activation_stream.h:67]   --->   Operation 6 'icmp' 'icmp_ln1494' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 7 [1/1] (0.73ns)   --->   "%out_data_V = select i1 %icmp_ln1494, i31 %trunc_ln1494, i31 0" [firmware/nnet_utils/nnet_activation_stream.h:67]   --->   Operation 7 'select' 'out_data_V' <Predicate = true> <Delay = 0.73> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 2.18>
+ST_3 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %data_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 8 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %res_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 9 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 10 [1/1] (0.00ns)   --->   "%tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str93)" [firmware/nnet_utils/nnet_activation_stream.h:60]   --->   Operation 10 'specregionbegin' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str11) nounwind" [firmware/nnet_utils/nnet_activation_stream.h:61]   --->   Operation 11 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_V_64 = zext i31 %out_data_V to i32" [firmware/nnet_utils/nnet_activation_stream.h:67]   --->   Operation 12 'zext' 'tmp_V_64' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 13 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_64)" [firmware/nnet_utils/nnet_activation_stream.h:70]   --->   Operation 13 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_3 : Operation 14 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str93, i32 %tmp)" [firmware/nnet_utils/nnet_activation_stream.h:71]   --->   Operation 14 'specregionend' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "ret void" [firmware/nnet_utils/nnet_activation_stream.h:72]   --->   Operation 15 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 1
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ data_V_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ res_V_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+tmp_V             (read           ) [ 0110]
+trunc_ln1494      (trunc          ) [ 0110]
+icmp_ln1494       (icmp           ) [ 0000]
+out_data_V        (select         ) [ 0101]
+specinterface_ln0 (specinterface  ) [ 0000]
+specinterface_ln0 (specinterface  ) [ 0000]
+tmp               (specregionbegin) [ 0000]
+specpipeline_ln61 (specpipeline   ) [ 0000]
+tmp_V_64          (zext           ) [ 0000]
+write_ln70        (write          ) [ 0000]
+empty             (specregionend  ) [ 0000]
+ret_ln72          (ret            ) [ 0000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="data_V_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="data_V_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="res_V_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="res_V_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1001" name="const_4">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.volatile.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecRegionBegin"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str93"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str11"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_fifo.volatile.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecRegionEnd"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1004" name="tmp_V_read_fu_36">
+<pin_list>
+<pin id="37" dir="0" index="0" bw="32" slack="0"/>
+<pin id="38" dir="0" index="1" bw="32" slack="0"/>
+<pin id="39" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="tmp_V/1 "/>
+</bind>
+</comp>
+
+<comp id="42" class="1004" name="write_ln70_write_fu_42">
+<pin_list>
+<pin id="43" dir="0" index="0" bw="0" slack="0"/>
+<pin id="44" dir="0" index="1" bw="32" slack="0"/>
+<pin id="45" dir="0" index="2" bw="31" slack="0"/>
+<pin id="46" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln70/3 "/>
+</bind>
+</comp>
+
+<comp id="49" class="1004" name="trunc_ln1494_fu_49">
+<pin_list>
+<pin id="50" dir="0" index="0" bw="32" slack="0"/>
+<pin id="51" dir="1" index="1" bw="31" slack="1"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln1494/1 "/>
+</bind>
+</comp>
+
+<comp id="53" class="1004" name="icmp_ln1494_fu_53">
+<pin_list>
+<pin id="54" dir="0" index="0" bw="32" slack="1"/>
+<pin id="55" dir="0" index="1" bw="32" slack="0"/>
+<pin id="56" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln1494/2 "/>
+</bind>
+</comp>
+
+<comp id="58" class="1004" name="out_data_V_fu_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="1" slack="0"/>
+<pin id="60" dir="0" index="1" bw="31" slack="1"/>
+<pin id="61" dir="0" index="2" bw="31" slack="0"/>
+<pin id="62" dir="1" index="3" bw="31" slack="1"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="out_data_V/2 "/>
+</bind>
+</comp>
+
+<comp id="65" class="1004" name="tmp_V_64_fu_65">
+<pin_list>
+<pin id="66" dir="0" index="0" bw="31" slack="1"/>
+<pin id="67" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="tmp_V_64/3 "/>
+</bind>
+</comp>
+
+<comp id="69" class="1005" name="tmp_V_reg_69">
+<pin_list>
+<pin id="70" dir="0" index="0" bw="32" slack="1"/>
+<pin id="71" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_V "/>
+</bind>
+</comp>
+
+<comp id="74" class="1005" name="trunc_ln1494_reg_74">
+<pin_list>
+<pin id="75" dir="0" index="0" bw="31" slack="1"/>
+<pin id="76" dir="1" index="1" bw="31" slack="1"/>
+</pin_list>
+<bind>
+<opset="trunc_ln1494 "/>
+</bind>
+</comp>
+
+<comp id="79" class="1005" name="out_data_V_reg_79">
+<pin_list>
+<pin id="80" dir="0" index="0" bw="31" slack="1"/>
+<pin id="81" dir="1" index="1" bw="31" slack="1"/>
+</pin_list>
+<bind>
+<opset="out_data_V "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="40"><net_src comp="4" pin="0"/><net_sink comp="36" pin=0"/></net>
+
+<net id="41"><net_src comp="0" pin="0"/><net_sink comp="36" pin=1"/></net>
+
+<net id="47"><net_src comp="32" pin="0"/><net_sink comp="42" pin=0"/></net>
+
+<net id="48"><net_src comp="2" pin="0"/><net_sink comp="42" pin=1"/></net>
+
+<net id="52"><net_src comp="36" pin="2"/><net_sink comp="49" pin=0"/></net>
+
+<net id="57"><net_src comp="6" pin="0"/><net_sink comp="53" pin=1"/></net>
+
+<net id="63"><net_src comp="53" pin="2"/><net_sink comp="58" pin=0"/></net>
+
+<net id="64"><net_src comp="8" pin="0"/><net_sink comp="58" pin=2"/></net>
+
+<net id="68"><net_src comp="65" pin="1"/><net_sink comp="42" pin=2"/></net>
+
+<net id="72"><net_src comp="36" pin="2"/><net_sink comp="69" pin=0"/></net>
+
+<net id="73"><net_src comp="69" pin="1"/><net_sink comp="53" pin=0"/></net>
+
+<net id="77"><net_src comp="49" pin="1"/><net_sink comp="74" pin=0"/></net>
+
+<net id="78"><net_src comp="74" pin="1"/><net_sink comp="58" pin=1"/></net>
+
+<net id="82"><net_src comp="58" pin="3"/><net_sink comp="79" pin=0"/></net>
+
+<net id="83"><net_src comp="79" pin="1"/><net_sink comp="65" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: data_V_V | {}
+	Port: res_V_V | {3 }
+ - Input state : 
+	Port: relu_me<ap_fixed,ap_fixed<32,16,5,3,0>,relu_config56> : data_V_V | {1 }
+	Port: relu_me<ap_fixed,ap_fixed<32,16,5,3,0>,relu_config56> : res_V_V | {}
+  - Chain level:
+	State 1
+	State 2
+		out_data_V : 1
+	State 3
+		write_ln70 : 1
+		empty : 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|------------------------|---------|---------|
+| Operation|     Functional Unit    |    FF   |   LUT   |
+|----------|------------------------|---------|---------|
+|  select  |    out_data_V_fu_58    |    0    |    31   |
+|----------|------------------------|---------|---------|
+|   icmp   |    icmp_ln1494_fu_53   |    0    |    18   |
+|----------|------------------------|---------|---------|
+|   read   |    tmp_V_read_fu_36    |    0    |    0    |
+|----------|------------------------|---------|---------|
+|   write  | write_ln70_write_fu_42 |    0    |    0    |
+|----------|------------------------|---------|---------|
+|   trunc  |   trunc_ln1494_fu_49   |    0    |    0    |
+|----------|------------------------|---------|---------|
+|   zext   |     tmp_V_64_fu_65     |    0    |    0    |
+|----------|------------------------|---------|---------|
+|   Total  |                        |    0    |    49   |
+|----------|------------------------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-------------------+--------+
+|                   |   FF   |
++-------------------+--------+
+| out_data_V_reg_79 |   31   |
+|    tmp_V_reg_69   |   32   |
+|trunc_ln1494_reg_74|   31   |
++-------------------+--------+
+|       Total       |   94   |
++-------------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+
+|           |   FF   |   LUT  |
++-----------+--------+--------+
+|  Function |    0   |   49   |
+|   Memory  |    -   |    -   |
+|Multiplexer|    -   |    -   |
+|  Register |   94   |    -   |
++-----------+--------+--------+
+|   Total   |   94   |   49   |
++-----------+--------+--------+

@@ -1,0 +1,156 @@
+
+
+================================================================
+== Vivado HLS Report for 'cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s'
+================================================================
+* Date:           Wed Jun 15 23:30:43 2022
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 3.256 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        1|        1| 5.000 ns | 5.000 ns |    1|    1| function |
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|      4|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |        0|      -|    1024|   1024|    -|
+|Multiplexer      |        -|      -|       -|      -|    -|
+|Register         |        -|      -|    2946|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|    3970|   1028|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|       3|      1|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +------------------------------+--------------------------------------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |            Memory            |                            Module                            | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +------------------------------+--------------------------------------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |layer_in_row_Array_V_3_0_0_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_1_0_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_2_0_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_3_0_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_0_1_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_1_1_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_2_1_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_3_1_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_0_2_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_1_2_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_2_2_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_3_2_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_0_3_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_1_3_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_2_3_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    |layer_in_row_Array_V_3_3_3_U  |cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_layebkb  |        0|  64|  64|    0|    59|   32|     1|         1888|
+    +------------------------------+--------------------------------------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total                         |                                                              |        0|1024|1024|    0|   944|  512|    16|        30208|
+    +------------------------------+--------------------------------------------------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |ap_block_pp0_stage0_11001  |    and   |      0|  0|   2|           1|           1|
+    |ap_enable_pp0              |    xor   |      0|  0|   2|           1|           2|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |Total                      |          |      0|  0|   4|           2|           3|
+    +---------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +-------------------------+-----+----+-----+-----------+
+    |           Name          |  FF | LUT| Bits| Const Bits|
+    +-------------------------+-----+----+-----+-----------+
+    |DataOut_V_22_reg_415     |   32|   0|   32|          0|
+    |DataOut_V_23_reg_420     |   32|   0|   32|          0|
+    |DataOut_V_25_reg_426     |   32|   0|   32|          0|
+    |DataOut_V_26_reg_431     |   32|   0|   32|          0|
+    |DataOut_V_29_reg_437     |   32|   0|   32|          0|
+    |DataOut_V_30_reg_442     |   32|   0|   32|          0|
+    |DataOut_V_33_reg_448     |   32|   0|   32|          0|
+    |DataOut_V_34_reg_453     |   32|   0|   32|          0|
+    |ap_CS_fsm                |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |    1|   0|    1|          0|
+    |data_V_read_2_reg_410    |  128|   0|  128|          0|
+    |tmp_4_reg_464            |  512|   0|  512|          0|
+    |tmp_5_reg_469            |  512|   0|  512|          0|
+    |tmp_6_reg_474            |  512|   0|  512|          0|
+    |tmp_7_reg_479            |  512|   0|  512|          0|
+    |tmp_reg_459              |  512|   0|  512|          0|
+    +-------------------------+-----+----+-----+-----------+
+    |Total                    | 2946|   0| 2946|          0|
+    +-------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+------+------------+------------------------------------------------------+--------------+
+|   RTL Ports   | Dir | Bits |  Protocol  |                     Source Object                    |    C Type    |
++---------------+-----+------+------------+------------------------------------------------------+--------------+
+|ap_clk         |  in |     1| ap_ctrl_hs | cnnshift_arr<ap_fixed,ap_fixed<32,16,5,3,0>,config4> | return value |
+|ap_rst         |  in |     1| ap_ctrl_hs | cnnshift_arr<ap_fixed,ap_fixed<32,16,5,3,0>,config4> | return value |
+|ap_start       |  in |     1| ap_ctrl_hs | cnnshift_arr<ap_fixed,ap_fixed<32,16,5,3,0>,config4> | return value |
+|ap_done        | out |     1| ap_ctrl_hs | cnnshift_arr<ap_fixed,ap_fixed<32,16,5,3,0>,config4> | return value |
+|ap_idle        | out |     1| ap_ctrl_hs | cnnshift_arr<ap_fixed,ap_fixed<32,16,5,3,0>,config4> | return value |
+|ap_ready       | out |     1| ap_ctrl_hs | cnnshift_arr<ap_fixed,ap_fixed<32,16,5,3,0>,config4> | return value |
+|ap_return      | out |  3200| ap_ctrl_hs | cnnshift_arr<ap_fixed,ap_fixed<32,16,5,3,0>,config4> | return value |
+|data_V_read    |  in |   128|   ap_none  |                      data_V_read                     |    scalar    |
+|output_V_read  |  in |  3200|   ap_none  |                     output_V_read                    |    scalar    |
++---------------+-----+------+------------+------------------------------------------------------+--------------+
+

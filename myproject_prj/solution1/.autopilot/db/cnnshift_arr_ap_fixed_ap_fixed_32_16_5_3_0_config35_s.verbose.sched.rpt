@@ -1,0 +1,131 @@
+
+
+================================================================
+== Vivado HLS Report for 'cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config35_s'
+================================================================
+* Date:           Wed Jun 15 23:30:20 2022
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 1.617 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        0|        0|   0 ns   |   0 ns   |    1|    1| function |
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.61>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%output_V_read_7 = call i1024 @_ssdm_op_Read.ap_auto.i1024(i1024 %output_V_read)" [firmware/nnet_utils/nnet_conv2d_stream.h:141]   --->   Operation 2 'read' 'output_V_read_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%data_7_V_read_3 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %data_7_V_read)" [firmware/nnet_utils/nnet_conv2d_stream.h:141]   --->   Operation 3 'read' 'data_7_V_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%data_6_V_read_3 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %data_6_V_read)" [firmware/nnet_utils/nnet_conv2d_stream.h:141]   --->   Operation 4 'read' 'data_6_V_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%data_5_V_read_3 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %data_5_V_read)" [firmware/nnet_utils/nnet_conv2d_stream.h:141]   --->   Operation 5 'read' 'data_5_V_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%data_4_V_read_3 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %data_4_V_read)" [firmware/nnet_utils/nnet_conv2d_stream.h:141]   --->   Operation 6 'read' 'data_4_V_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%data_3_V_read_3 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %data_3_V_read)" [firmware/nnet_utils/nnet_conv2d_stream.h:141]   --->   Operation 7 'read' 'data_3_V_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%data_2_V_read_3 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %data_2_V_read)" [firmware/nnet_utils/nnet_conv2d_stream.h:141]   --->   Operation 8 'read' 'data_2_V_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%data_1_V_read_3 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %data_1_V_read)" [firmware/nnet_utils/nnet_conv2d_stream.h:141]   --->   Operation 9 'read' 'data_1_V_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%data_0_V_read_3 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %data_0_V_read)" [firmware/nnet_utils/nnet_conv2d_stream.h:141]   --->   Operation 10 'read' 'data_0_V_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str11) nounwind" [firmware/nnet_utils/nnet_conv2d_stream.h:145]   --->   Operation 11 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (1.61ns)   --->   "%DataOut_V = call i32 @"_ssdm_op_MemShiftRead.[6 x i32]P"(i32* getelementptr inbounds ([6 x i32]* @layer_in_row_Array_V_7_0_0, i64 0, i64 5), i32 %data_0_V_read_3, i1 true)" [firmware/nnet_utils/nnet_conv2d_stream.h:157]   --->   Operation 12 'memshiftread' 'DataOut_V' <Predicate = true> <Delay = 1.61> <Core = "ShiftReg">   --->   Core 33 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 32> <Depth = 6> <ShiftMem>
+ST_1 : Operation 13 [1/1] (1.61ns)   --->   "%DataOut_V_74 = call i32 @"_ssdm_op_MemShiftRead.[6 x i32]P"(i32* getelementptr inbounds ([6 x i32]* @layer_in_row_Array_V_7_0_1, i64 0, i64 5), i32 %data_1_V_read_3, i1 true)" [firmware/nnet_utils/nnet_conv2d_stream.h:157]   --->   Operation 13 'memshiftread' 'DataOut_V_74' <Predicate = true> <Delay = 1.61> <Core = "ShiftReg">   --->   Core 33 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 32> <Depth = 6> <ShiftMem>
+ST_1 : Operation 14 [1/1] (1.61ns)   --->   "%DataOut_V_75 = call i32 @"_ssdm_op_MemShiftRead.[6 x i32]P"(i32* getelementptr inbounds ([6 x i32]* @layer_in_row_Array_V_7_0_2, i64 0, i64 5), i32 %data_2_V_read_3, i1 true)" [firmware/nnet_utils/nnet_conv2d_stream.h:157]   --->   Operation 14 'memshiftread' 'DataOut_V_75' <Predicate = true> <Delay = 1.61> <Core = "ShiftReg">   --->   Core 33 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 32> <Depth = 6> <ShiftMem>
+ST_1 : Operation 15 [1/1] (1.61ns)   --->   "%DataOut_V_76 = call i32 @"_ssdm_op_MemShiftRead.[6 x i32]P"(i32* getelementptr inbounds ([6 x i32]* @layer_in_row_Array_V_7_0_3, i64 0, i64 5), i32 %data_3_V_read_3, i1 true)" [firmware/nnet_utils/nnet_conv2d_stream.h:157]   --->   Operation 15 'memshiftread' 'DataOut_V_76' <Predicate = true> <Delay = 1.61> <Core = "ShiftReg">   --->   Core 33 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 32> <Depth = 6> <ShiftMem>
+ST_1 : Operation 16 [1/1] (1.61ns)   --->   "%DataOut_V_77 = call i32 @"_ssdm_op_MemShiftRead.[6 x i32]P"(i32* getelementptr inbounds ([6 x i32]* @layer_in_row_Array_V_7_0_4, i64 0, i64 5), i32 %data_4_V_read_3, i1 true)" [firmware/nnet_utils/nnet_conv2d_stream.h:157]   --->   Operation 16 'memshiftread' 'DataOut_V_77' <Predicate = true> <Delay = 1.61> <Core = "ShiftReg">   --->   Core 33 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 32> <Depth = 6> <ShiftMem>
+ST_1 : Operation 17 [1/1] (1.61ns)   --->   "%DataOut_V_78 = call i32 @"_ssdm_op_MemShiftRead.[6 x i32]P"(i32* getelementptr inbounds ([6 x i32]* @layer_in_row_Array_V_7_0_5, i64 0, i64 5), i32 %data_5_V_read_3, i1 true)" [firmware/nnet_utils/nnet_conv2d_stream.h:157]   --->   Operation 17 'memshiftread' 'DataOut_V_78' <Predicate = true> <Delay = 1.61> <Core = "ShiftReg">   --->   Core 33 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 32> <Depth = 6> <ShiftMem>
+ST_1 : Operation 18 [1/1] (1.61ns)   --->   "%DataOut_V_79 = call i32 @"_ssdm_op_MemShiftRead.[6 x i32]P"(i32* getelementptr inbounds ([6 x i32]* @layer_in_row_Array_V_7_0_6, i64 0, i64 5), i32 %data_6_V_read_3, i1 true)" [firmware/nnet_utils/nnet_conv2d_stream.h:157]   --->   Operation 18 'memshiftread' 'DataOut_V_79' <Predicate = true> <Delay = 1.61> <Core = "ShiftReg">   --->   Core 33 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 32> <Depth = 6> <ShiftMem>
+ST_1 : Operation 19 [1/1] (1.61ns)   --->   "%DataOut_V_80 = call i32 @"_ssdm_op_MemShiftRead.[6 x i32]P"(i32* getelementptr inbounds ([6 x i32]* @layer_in_row_Array_V_7_0_7, i64 0, i64 5), i32 %data_7_V_read_3, i1 true)" [firmware/nnet_utils/nnet_conv2d_stream.h:157]   --->   Operation 19 'memshiftread' 'DataOut_V_80' <Predicate = true> <Delay = 1.61> <Core = "ShiftReg">   --->   Core 33 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 32> <Depth = 6> <ShiftMem>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp = call i256 @_ssdm_op_PartSelect.i256.i1024.i32.i32(i1024 %output_V_read_7, i32 768, i32 1023)" [firmware/nnet_utils/nnet_conv2d_stream.h:134->firmware/nnet_utils/nnet_conv2d_stream.h:161]   --->   Operation 20 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_s = call i256 @_ssdm_op_PartSelect.i256.i1024.i32.i32(i1024 %output_V_read_7, i32 256, i32 511)" [firmware/nnet_utils/nnet_conv2d_stream.h:134->firmware/nnet_utils/nnet_conv2d_stream.h:161]   --->   Operation 21 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%output_V_write_assign = call i1024 @_ssdm_op_BitConcatenate.i1024.i32.i32.i32.i32.i32.i32.i32.i32.i256.i32.i32.i32.i32.i32.i32.i32.i32.i256(i32 %data_7_V_read_3, i32 %data_6_V_read_3, i32 %data_5_V_read_3, i32 %data_4_V_read_3, i32 %data_3_V_read_3, i32 %data_2_V_read_3, i32 %data_1_V_read_3, i32 %data_0_V_read_3, i256 %tmp, i32 %DataOut_V_80, i32 %DataOut_V_79, i32 %DataOut_V_78, i32 %DataOut_V_77, i32 %DataOut_V_76, i32 %DataOut_V_75, i32 %DataOut_V_74, i32 %DataOut_V, i256 %tmp_s)" [firmware/nnet_utils/nnet_conv2d_stream.h:134->firmware/nnet_utils/nnet_conv2d_stream.h:161]   --->   Operation 22 'bitconcatenate' 'output_V_write_assign' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "ret i1024 %output_V_write_assign" [firmware/nnet_utils/nnet_conv2d_stream.h:162]   --->   Operation 23 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 1.62ns
+The critical path consists of the following:
+	wire read on port 'data_7_V_read' (firmware/nnet_utils/nnet_conv2d_stream.h:141) [11]  (0 ns)
+	'memshiftread' operation ('DataOut.V', firmware/nnet_utils/nnet_conv2d_stream.h:157) [27]  (1.62 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

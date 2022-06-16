@@ -1,0 +1,468 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense_large_stream_me_ap_fixed_ap_fixed_config50_s'
+================================================================
+* Date:           Wed Jun 15 23:30:35 2022
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 4.974 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+------+------+---------+
+    |  Latency (cycles) |  Latency (absolute) |   Interval  | Pipeline|
+    |   min   |   max   |    min   |    max   |  min |  max |   Type  |
+    +---------+---------+----------+----------+------+------+---------+
+    |     1056|     1057| 5.280 us | 5.285 us |  1056|  1057|   none  |
+    +---------+---------+----------+----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 34
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 35 [2/2] (0.00ns)   --->   "%tmp = call fastcc { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } @"dense_large<ap_fixed,ap_fixed<32,16,5,3,0>,config50>"() readonly" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 35 'call' 'tmp' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 4.97>
+ST_2 : Operation 36 [1/2] (4.97ns)   --->   "%tmp = call fastcc { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } @"dense_large<ap_fixed,ap_fixed<32,16,5,3,0>,config50>"() readonly" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 36 'call' 'tmp' <Predicate = true> <Delay = 4.97> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_V = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 0" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 37 'extractvalue' 'tmp_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_V_1 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 1" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 38 'extractvalue' 'tmp_V_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_V_2 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 2" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 39 'extractvalue' 'tmp_V_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_V_3 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 3" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 40 'extractvalue' 'tmp_V_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_V_4 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 4" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 41 'extractvalue' 'tmp_V_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_V_5 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 5" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 42 'extractvalue' 'tmp_V_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_V_6 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 6" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 43 'extractvalue' 'tmp_V_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_V_7 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 7" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 44 'extractvalue' 'tmp_V_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_V_8 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 8" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 45 'extractvalue' 'tmp_V_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_V_9 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 9" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 46 'extractvalue' 'tmp_V_9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_V_10 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 10" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 47 'extractvalue' 'tmp_V_10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_V_11 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 11" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 48 'extractvalue' 'tmp_V_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_V_12 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 12" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 49 'extractvalue' 'tmp_V_12' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_V_13 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 13" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 50 'extractvalue' 'tmp_V_13' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_V_14 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 14" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 51 'extractvalue' 'tmp_V_14' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_V_15 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 15" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 52 'extractvalue' 'tmp_V_15' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_V_16 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 16" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 53 'extractvalue' 'tmp_V_16' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_V_17 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 17" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 54 'extractvalue' 'tmp_V_17' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_V_18 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 18" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 55 'extractvalue' 'tmp_V_18' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_V_19 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 19" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 56 'extractvalue' 'tmp_V_19' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_V_20 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 20" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 57 'extractvalue' 'tmp_V_20' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_V_21 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 21" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 58 'extractvalue' 'tmp_V_21' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_V_22 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 22" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 59 'extractvalue' 'tmp_V_22' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_V_23 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 23" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 60 'extractvalue' 'tmp_V_23' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_V_24 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 24" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 61 'extractvalue' 'tmp_V_24' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_V_25 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 25" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 62 'extractvalue' 'tmp_V_25' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_V_26 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 26" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 63 'extractvalue' 'tmp_V_26' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_V_27 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 27" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 64 'extractvalue' 'tmp_V_27' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_V_28 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 28" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 65 'extractvalue' 'tmp_V_28' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_V_29 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 29" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 66 'extractvalue' 'tmp_V_29' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_V_30 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 30" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 67 'extractvalue' 'tmp_V_30' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_V_31 = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 } %tmp, 31" [firmware/nnet_utils/nnet_dense_resource.h:575]   --->   Operation 68 'extractvalue' 'tmp_V_31' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.18>
+ST_3 : Operation 69 [1/1] (2.18ns)   --->   "%empty = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 69 'read' 'empty' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_3 : Operation 70 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 70 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 4 <SV = 3> <Delay = 2.18>
+ST_4 : Operation 71 [1/1] (2.18ns)   --->   "%empty_225 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 71 'read' 'empty_225' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_4 : Operation 72 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_1)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 72 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 5 <SV = 4> <Delay = 2.18>
+ST_5 : Operation 73 [1/1] (2.18ns)   --->   "%empty_226 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 73 'read' 'empty_226' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_5 : Operation 74 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_2)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 74 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 6 <SV = 5> <Delay = 2.18>
+ST_6 : Operation 75 [1/1] (2.18ns)   --->   "%empty_227 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 75 'read' 'empty_227' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_6 : Operation 76 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_3)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 76 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 7 <SV = 6> <Delay = 2.18>
+ST_7 : Operation 77 [1/1] (2.18ns)   --->   "%empty_228 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 77 'read' 'empty_228' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_7 : Operation 78 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_4)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 78 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 8 <SV = 7> <Delay = 2.18>
+ST_8 : Operation 79 [1/1] (2.18ns)   --->   "%empty_229 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 79 'read' 'empty_229' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_8 : Operation 80 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_5)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 80 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 9 <SV = 8> <Delay = 2.18>
+ST_9 : Operation 81 [1/1] (2.18ns)   --->   "%empty_230 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 81 'read' 'empty_230' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_9 : Operation 82 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_6)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 82 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 10 <SV = 9> <Delay = 2.18>
+ST_10 : Operation 83 [1/1] (2.18ns)   --->   "%empty_231 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 83 'read' 'empty_231' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_10 : Operation 84 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_7)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 84 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 11 <SV = 10> <Delay = 2.18>
+ST_11 : Operation 85 [1/1] (2.18ns)   --->   "%empty_232 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 85 'read' 'empty_232' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_11 : Operation 86 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_8)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 86 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 12 <SV = 11> <Delay = 2.18>
+ST_12 : Operation 87 [1/1] (2.18ns)   --->   "%empty_233 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 87 'read' 'empty_233' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_12 : Operation 88 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_9)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 88 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 13 <SV = 12> <Delay = 2.18>
+ST_13 : Operation 89 [1/1] (2.18ns)   --->   "%empty_234 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 89 'read' 'empty_234' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_13 : Operation 90 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_10)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 90 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 14 <SV = 13> <Delay = 2.18>
+ST_14 : Operation 91 [1/1] (2.18ns)   --->   "%empty_235 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 91 'read' 'empty_235' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_14 : Operation 92 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_11)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 92 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 15 <SV = 14> <Delay = 2.18>
+ST_15 : Operation 93 [1/1] (2.18ns)   --->   "%empty_236 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 93 'read' 'empty_236' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_15 : Operation 94 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_12)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 94 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 16 <SV = 15> <Delay = 2.18>
+ST_16 : Operation 95 [1/1] (2.18ns)   --->   "%empty_237 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 95 'read' 'empty_237' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_16 : Operation 96 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_13)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 96 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 17 <SV = 16> <Delay = 2.18>
+ST_17 : Operation 97 [1/1] (2.18ns)   --->   "%empty_238 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 97 'read' 'empty_238' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_17 : Operation 98 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_14)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 98 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 18 <SV = 17> <Delay = 2.18>
+ST_18 : Operation 99 [1/1] (2.18ns)   --->   "%empty_239 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 99 'read' 'empty_239' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_18 : Operation 100 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_15)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 100 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 19 <SV = 18> <Delay = 2.18>
+ST_19 : Operation 101 [1/1] (2.18ns)   --->   "%empty_240 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 101 'read' 'empty_240' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_19 : Operation 102 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_16)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 102 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 20 <SV = 19> <Delay = 2.18>
+ST_20 : Operation 103 [1/1] (2.18ns)   --->   "%empty_241 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 103 'read' 'empty_241' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_20 : Operation 104 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_17)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 104 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 21 <SV = 20> <Delay = 2.18>
+ST_21 : Operation 105 [1/1] (2.18ns)   --->   "%empty_242 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 105 'read' 'empty_242' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_21 : Operation 106 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_18)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 106 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 22 <SV = 21> <Delay = 2.18>
+ST_22 : Operation 107 [1/1] (2.18ns)   --->   "%empty_243 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 107 'read' 'empty_243' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_22 : Operation 108 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_19)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 108 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 23 <SV = 22> <Delay = 2.18>
+ST_23 : Operation 109 [1/1] (2.18ns)   --->   "%empty_244 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 109 'read' 'empty_244' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_23 : Operation 110 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_20)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 110 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 24 <SV = 23> <Delay = 2.18>
+ST_24 : Operation 111 [1/1] (2.18ns)   --->   "%empty_245 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 111 'read' 'empty_245' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_24 : Operation 112 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_21)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 112 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 25 <SV = 24> <Delay = 2.18>
+ST_25 : Operation 113 [1/1] (2.18ns)   --->   "%empty_246 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 113 'read' 'empty_246' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_25 : Operation 114 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_22)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 114 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 26 <SV = 25> <Delay = 2.18>
+ST_26 : Operation 115 [1/1] (2.18ns)   --->   "%empty_247 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 115 'read' 'empty_247' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_26 : Operation 116 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_23)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 116 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 27 <SV = 26> <Delay = 2.18>
+ST_27 : Operation 117 [1/1] (2.18ns)   --->   "%empty_248 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 117 'read' 'empty_248' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_27 : Operation 118 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_24)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 118 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 28 <SV = 27> <Delay = 2.18>
+ST_28 : Operation 119 [1/1] (2.18ns)   --->   "%empty_249 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 119 'read' 'empty_249' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_28 : Operation 120 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_25)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 120 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 29 <SV = 28> <Delay = 2.18>
+ST_29 : Operation 121 [1/1] (2.18ns)   --->   "%empty_250 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 121 'read' 'empty_250' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_29 : Operation 122 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_26)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 122 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 30 <SV = 29> <Delay = 2.18>
+ST_30 : Operation 123 [1/1] (2.18ns)   --->   "%empty_251 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 123 'read' 'empty_251' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_30 : Operation 124 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_27)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 124 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 31 <SV = 30> <Delay = 2.18>
+ST_31 : Operation 125 [1/1] (2.18ns)   --->   "%empty_252 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 125 'read' 'empty_252' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_31 : Operation 126 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_28)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 126 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 32 <SV = 31> <Delay = 2.18>
+ST_32 : Operation 127 [1/1] (2.18ns)   --->   "%empty_253 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 127 'read' 'empty_253' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_32 : Operation 128 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_29)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 128 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 33 <SV = 32> <Delay = 2.18>
+ST_33 : Operation 129 [1/1] (2.18ns)   --->   "%empty_254 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 129 'read' 'empty_254' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_33 : Operation 130 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_30)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 130 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+
+State 34 <SV = 33> <Delay = 2.18>
+ST_34 : Operation 131 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %res_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 131 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 132 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %data_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 132 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 133 [1/1] (2.18ns)   --->   "%empty_255 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %data_V_V)" [firmware/nnet_utils/nnet_dense_resource.h:570]   --->   Operation 133 'read' 'empty_255' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_34 : Operation 134 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %res_V_V, i32 %tmp_V_31)" [firmware/nnet_utils/nnet_dense_resource.h:582]   --->   Operation 134 'write' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_34 : Operation 135 [1/1] (0.00ns)   --->   "ret void" [firmware/nnet_utils/nnet_dense_resource.h:585]   --->   Operation 135 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 4.97ns
+The critical path consists of the following:
+	'call' operation ('tmp', firmware/nnet_utils/nnet_dense_resource.h:575) to 'dense_large<ap_fixed,ap_fixed<32,16,5,3,0>,config50>' [37]  (4.97 ns)
+
+ <State 3>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [5]  (2.19 ns)
+
+ <State 4>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [6]  (2.19 ns)
+
+ <State 5>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [7]  (2.19 ns)
+
+ <State 6>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [8]  (2.19 ns)
+
+ <State 7>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [9]  (2.19 ns)
+
+ <State 8>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [10]  (2.19 ns)
+
+ <State 9>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [11]  (2.19 ns)
+
+ <State 10>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [12]  (2.19 ns)
+
+ <State 11>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [13]  (2.19 ns)
+
+ <State 12>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [14]  (2.19 ns)
+
+ <State 13>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [15]  (2.19 ns)
+
+ <State 14>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [16]  (2.19 ns)
+
+ <State 15>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [17]  (2.19 ns)
+
+ <State 16>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [18]  (2.19 ns)
+
+ <State 17>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [19]  (2.19 ns)
+
+ <State 18>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [20]  (2.19 ns)
+
+ <State 19>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [21]  (2.19 ns)
+
+ <State 20>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [22]  (2.19 ns)
+
+ <State 21>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [23]  (2.19 ns)
+
+ <State 22>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [24]  (2.19 ns)
+
+ <State 23>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [25]  (2.19 ns)
+
+ <State 24>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [26]  (2.19 ns)
+
+ <State 25>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [27]  (2.19 ns)
+
+ <State 26>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [28]  (2.19 ns)
+
+ <State 27>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [29]  (2.19 ns)
+
+ <State 28>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [30]  (2.19 ns)
+
+ <State 29>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [31]  (2.19 ns)
+
+ <State 30>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [32]  (2.19 ns)
+
+ <State 31>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [33]  (2.19 ns)
+
+ <State 32>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [34]  (2.19 ns)
+
+ <State 33>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [35]  (2.19 ns)
+
+ <State 34>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'data_V_V' (firmware/nnet_utils/nnet_dense_resource.h:570) [36]  (2.19 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

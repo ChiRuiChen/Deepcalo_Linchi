@@ -1,0 +1,48 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'conv_2d_cl_me_ap_fixed_ap_fixed_32_16_5_3_0_config4_s'" level="0">
+<item name = "Date">Wed Jun 15 23:30:05 2022
+</item>
+<item name = "Version">2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)</item>
+<item name = "Project">myproject_prj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00 ns, 4.429 ns, 0.62 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">28320, 2885100, 0.142 ms, 14.425 ms, 28320, 2885100, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s_fu_532">cnnshift_arr_ap_fixed_ap_fixed_32_16_5_3_0_config4_s, 1, 1, 5.000 ns, 5.000 ns, 1, 1, function</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">28319, 2885099, 8 ~ 815, -, -, 3540, no</column>
+<column name=" + ReuseLoop">799, 799, 1, 1, 1, 800, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
